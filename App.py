@@ -99,10 +99,7 @@ def main():
     df['Analysis'] = df['Polarity'].apply(getAnalysis)
 
     
-    #from PIL import Image
-    image = Image.open('logo.jpg')
-    st.image(image, caption='Twitter for Analytics',use_column_width=True)
-    
+   
     
     # Collect Input from user :
     TwitterHandle = str()
