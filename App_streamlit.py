@@ -1,4 +1,3 @@
-/anaconda3/bin/python -m pip install wordcloud
 import streamlit as st
 import warnings
 warnings.filterwarnings("ignore")
