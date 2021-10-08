@@ -36,7 +36,7 @@ def main():
     #st.subheader("Select a User for whom you'd like to get the sentiment analysis:")
 
     html_temp = """
-    <div style="background-color:tomato;"><p style="color:white;font-size:40px;padding:9px">Live twitter Sentiment analysis</p></div>
+    <div style="background-color:tomato;"><p style="color:white;font-size:40px;padding:9px">Live Twitter Sentiment Analysis</p></div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     st.subheader("Select a User")
