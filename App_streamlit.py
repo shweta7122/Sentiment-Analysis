@@ -1,4 +1,4 @@
-!pip install wordcloud
+import wordcloud
 import streamlit as st
 import warnings
 warnings.filterwarnings("ignore")
