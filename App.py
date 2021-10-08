@@ -80,11 +80,11 @@ def main():
 
     # Create a function to get the functionality
     def getSubjectivity(text):
-    return TextBlob(text).sentiment.subjectivity
+    	return TextBlob(text).sentiment.subjectivity
 
     # Create a function to get the polarity
     def getPolarity(text):
-    return TextBlob(text).sentiment.polarity
+    	return TextBlob(text).sentiment.polarity
 
     # Create two new columns
     df['Subjectivity'] = df['Tweets'].apply(getSubjectivity)
