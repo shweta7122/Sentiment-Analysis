@@ -1,4 +1,3 @@
-import wordcloud
 import streamlit as st
 import warnings
 warnings.filterwarnings("ignore")
@@ -12,6 +11,7 @@ from tweepy import OAuthHandler
 import re
 import textblob
 from textblob import TextBlob
+import wordcloud
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 import openpyxl
 import time
