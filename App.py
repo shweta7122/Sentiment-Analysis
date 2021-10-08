@@ -61,6 +61,8 @@ def main():
     TwitterHandle = "JustinTrudeau"
     posts = api.user_timeline(screen_name = TwitterHandle, count = 100, lang ='en', tweet_mode="extended")
     df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
+	
+
         
     
 # Write a Function to clean tweets:
@@ -108,7 +110,7 @@ def main():
     if len(TwitterHandle) > 0 :
         # Call the function to extract the data. pass the Twitter Handle and filename you want the data to be stored in.
         with st.spinner("Please wait, Tweets are being extracted"):
-            get_tweets(TwitterHandle , Count=200)
+            get_tweets(TwitterHandle ,Count=100)
         st.success('Tweets have been Extracted !!!!')    
            
     
