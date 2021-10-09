@@ -74,8 +74,8 @@ def main():
 
 
     df['Tweets']=df['Tweets'].apply(cleanTxt)
+	
 	def get_tweets():
-
 		l=[]
 		i=1
 		for tweet in posts[:5]:
