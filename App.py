@@ -92,9 +92,9 @@ df['Polarity'] = df['Tweets'].apply(getPolarity)
     
 def getAnalysis(score):
 	
-    if score > 0:
+    if score > "0":
        return 'Positive'
-    elif score == 0:
+    elif score == "0":
        return 'Neutral'
     else:
        return 'Negative'
@@ -115,10 +115,10 @@ if len(TwitterHandle) > 0 :
            
     
         # Call function to get Clean tweets
-    df['CleanTxt'] = df['Tweets'].apply(lambda x : cleanTxt(x))
+    df['CleanTxt'] = df['Tweets'].apply.getAnalysis(cleanTxt)
     
         # Call function to get the Sentiments
-    df["Polarity"] = df["Tweets"].apply(lambda x : getAnalysis(x))
+    df["Polarity"] = df["Tweets"].apply.getAnalysis(cleanTxt)
                 
         # Write Summary of the Tweets
     st.write("Total Tweets Extracted for the User '{}' are : {}".format(TwitterHandle,len(df.Tweets)))
