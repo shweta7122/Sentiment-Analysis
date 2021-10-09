@@ -61,13 +61,13 @@ if len(TwitterHandle) > 0 :
     # Call the function to extract the data. pass the Twitter Handle and filename you want the data to be stored in.
     with st.spinner("Please wait, Tweets are being extracted"):
         posts = api.user_timeline(screen_name = TwitterHandle, count = 200, lang ='en', tweet_mode="extended")
-
-df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
+        
 
 st.success('Tweets have been Extracted !!!!')   
 #df.to_csv("TweetDataset.csv",index=False)
 #df.to_excel('{}.xlsx'.format("TweetDataset"),index=False)   ## Save as Excel
 
+df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
 
 def cleanTxt(text):
     text = re.sub(r'@[A-Za-z0-9]+', '', text) #Removed @mentions
