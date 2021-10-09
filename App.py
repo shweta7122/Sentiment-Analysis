@@ -94,9 +94,10 @@ def main():
     # Create two new columns
     df['Subjectivity'] = df['Tweets'].apply(getSubjectivity)
     df['Polarity'] = df['Tweets'].apply(getPolarity)
+	
     
     def getAnalysis(score):
-        
+	        
         if score > 0:
             return 'Positive'
         elif score == 0:
