@@ -56,12 +56,15 @@ api = tweepy.API(authenticate, wait_on_rate_limit=True)
 TwitterHandle = "JustinTrudeau"
 posts = api.user_timeline(screen_name = TwitterHandle, count = 100, lang ='en', tweet_mode="extended")
 df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
+#df.to_csv("TweetDataset.csv",index=False)
+#df.to_excel('{}.xlsx'.format("TweetDataset"),index=False)   ## Save as Excel
+
 def get_tweets():
-    l=[]
-    i=1
+    i=0
+    i=i+1
     for tweet in posts[:5]:
         i= i+1
-        return l
+        return i
     recent_tweets=get_tweets()		
     return recent_tweets
 	
