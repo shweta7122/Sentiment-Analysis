@@ -89,12 +89,12 @@ def getPolarity(text):
     return TextBlob(text).sentiment.polarity
 
     # Create two new columns
-df['Subjectivity'] = df['Tweets'].apply(getSubjectivity)
-df['Polarity'] = df['Tweets'].apply(getPolarity)
+df['Subjectivity'].astype(str).astype(int) = df['Tweets'].apply(getSubjectivity)
+df['Polarity'].astype(str).astype(int) = df['Tweets'].apply(getPolarity)
     
     
 def getAnalysis(cleanTxt):
-    analysis = int(analysis).asttype(int)
+  
     
     if analysis.sentiment.polarity > 0:
        return 'Positive'
