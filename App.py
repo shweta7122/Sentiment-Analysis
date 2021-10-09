@@ -76,12 +76,12 @@ def main():
     st.write(recent_tweets)
 	
     def cleanTxt(text):
-	text = re.sub(r'@[A-Za-z0-9]+', '', text) #Removed @mentions
-	text = re.sub(r'#', '', text) #Removed Hastags
-  	text = re.sub(r'RT[\s]+', '', text) #Removed RT
-  	text = re.sub(r'https?:\/\/\S+', '', text) # Removed hyperlinks
+        text = re.sub(r'@[A-Za-z0-9]+', '', text) #Removed @mentions
+        text = re.sub(r'#', '', text) #Removed Hastags
+        text = re.sub(r'RT[\s]+', '', text) #Removed RT
+        text = re.sub(r'https?:\/\/\S+', '', text) # Removed hyperlinks
 
-  	return text
+        return text
         
     df['Tweets']=df['Tweets'].apply(cleanTxt)
 
