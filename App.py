@@ -72,9 +72,7 @@ def main():
         return recent_tweets
 	
     
-    st.write(recent_tweets)
-    st.write(recent_tweets)
-	
+
     def cleanTxt(text):
         text = re.sub(r'@[A-Za-z0-9]+', '', text) #Removed @mentions
         text = re.sub(r'#', '', text) #Removed Hastags
