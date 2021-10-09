@@ -62,6 +62,8 @@ if len(TwitterHandle) > 0 :
     with st.spinner("Please wait, Tweets are being extracted"):
         posts = api.user_timeline(screen_name = TwitterHandle, count = 200, lang ='en', tweet_mode="extended")
 
+df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
+
 st.success('Tweets have been Extracted !!!!')   
 #df.to_csv("TweetDataset.csv",index=False)
 #df.to_excel('{}.xlsx'.format("TweetDataset"),index=False)   ## Save as Excel
