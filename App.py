@@ -94,7 +94,7 @@ df['Polarity'] = df['Tweets'].apply(getPolarity)
     
     
 def getAnalysis(cleanTxt):
-    analysis = int(analysis.sentiment.polarity)
+    analysis = int(analysis)
     
     if analysis.sentiment.polarity > 0:
        return 'Positive'
