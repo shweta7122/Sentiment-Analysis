@@ -95,13 +95,14 @@ def main():
     df['Subjectivity'] = df['Tweets'].apply(getSubjectivity)
     df['Polarity'] = df['Tweets'].apply(getPolarity)
     
-    def getAnalysis(score):
-        if score < 0:
-            return 'Negative'
-        elif score == 0:
-            return 'Neutral'
-        else:
-            return 'Positive'
+    def getAnalysis(tweet):
+	analysis = TectBlob(tweet)
+        if analysis.sentiment.polarity > 0:
+		return 'Positive'
+	elif analysis.sentiment.polarity ==0
+		return'Neutral'
+	else:
+		return'Negative'
 
     df['Analysis'] = df['Polarity'].apply(getAnalysis)
 
