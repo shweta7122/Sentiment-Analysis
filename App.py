@@ -95,9 +95,9 @@ def main():
     df['Subjectivity'] = df['Tweets'].apply(getSubjectivity)
     df['Polarity'] = df['Tweets'].apply(getPolarity)
     
-    def convert(score, cast):
-        score =cast(score)
-        return score
+    def convert(x, cast):
+        score =cast(x)
+        return x
 	
     
     def getAnalysis(score):
