@@ -52,6 +52,9 @@ authenticate.set_access_token(accessToken, accessTokenSecret)
 
 # Create the API object
 api = tweepy.API(authenticate, wait_on_rate_limit=True)
+
+screen_name = "JustinTrudeau"
+posts = api.user_timeline(screen_name = screen_name, count = 100, lang ='en', tweet_mode="extended")
     
 # Collect Input from user :
 TwitterHandle = str()
