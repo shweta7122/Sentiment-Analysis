@@ -131,65 +131,65 @@ st.write("Total Negative Tweets are : {}".format(len(df[df["Analysis"]=="Negativ
 st.write("Total Neutral Tweets are : {}".format(len(df[df["Analysis"]=="Neutral"])))
         
     # See the Extracted Data : 
-    if st.button("See the Extracted Data"):
+if st.button("See the Extracted Data"):
     #st.markdown(html_temp, unsafe_allow_html=True)
-        st.success("Below is the Extracted Data :")
-        st.write(df.head(50))
+    st.success("Below is the Extracted Data :")
+    st.write(df.head(50))
         
         # get the countPlot
-    if st.button("Get Count Plot for Different Sentiments"):
-        st.success("Generating A Count Plot")
-        st.subheader(" Count Plot for Different Sentiments")
-        st.write(sns.countplot(df["Analysis"]))
-        st.pyplot()
+if st.button("Get Count Plot for Different Sentiments"):
+    st.success("Generating A Count Plot")
+    st.subheader(" Count Plot for Different Sentiments")
+    st.write(sns.countplot(df["Analysis"]))
+    st.pyplot()
         
         # Piechart 
-    if st.button("Get Pie Chart for Different Sentiments"):
-        st.success("Generating A Pie Chart")
-        a=len(df[df["Analysis"]=="Positive"])
-        b=len(df[df["Analysis"]=="Negative"])
-        c=len(df[df["Analysis"]=="Neutral"])
-        d=np.array([a,b,c])
-        explode = (0.1, 0.0, 0.1)
-        st.write(plt.pie(d,shadow=True,explode=explode,labels=["Positive","Negative","Neutral"],autopct='%1.2f%%'))
-        st.pyplot()
+if st.button("Get Pie Chart for Different Sentiments"):
+    st.success("Generating A Pie Chart")
+    a=len(df[df["Analysis"]=="Positive"])
+    b=len(df[df["Analysis"]=="Negative"])
+    c=len(df[df["Analysis"]=="Neutral"])
+    d=np.array([a,b,c])
+    explode = (0.1, 0.0, 0.1)
+    st.write(plt.pie(d,shadow=True,explode=explode,labels=["Positive","Negative","Neutral"],autopct='%1.2f%%'))
+    st.pyplot()
             
        
         
         # Points to add 1. Make Backgroud Clear for Wordcloud 2. Remove keywords from Wordcloud
         
         # Create a Worlcloud
-    if st.button("Get WordCloud for{}".format(TwitterHandle)):
-        st.success("Generating A WordCloud for all tweets by {}".format(TwitterHandle))
-        text = " ".join(review for review in df.cleanTxt)
-        stopwords = set(STOPWORDS)
-        text_newALL = prepCloud(text,TwitterHandle)
-        wordcloud = WordCloud(stopwords=stopwords,max_words=800,max_font_size=70).generate(text_newALL)
-        st.write(plt.imshow(wordcloud, interpolation='bilinear'))
-        st.pyplot()
+if st.button("Get WordCloud for{}".format(TwitterHandle)):
+    st.success("Generating A WordCloud for all tweets by {}".format(TwitterHandle))
+    text = " ".join(review for review in df.cleanTxt)
+    stopwords = set(STOPWORDS)
+    text_newALL = prepCloud(text,TwitterHandle)
+    wordcloud = WordCloud(stopwords=stopwords,max_words=800,max_font_size=70).generate(text_newALL)
+    st.write(plt.imshow(wordcloud, interpolation='bilinear'))
+    st.pyplot()
         
         
         #Wordcloud for Positive tweets only
-    if st.button("Get WordCloud for all Positive Tweets by {}".format(TwitterHandle)):
-        st.success("Generating A WordCloud for all Positive Tweets by {}".format(TwitterHandle))
-        text_positive = " ".join(review for review in df[df["Analysis"]=="Positive"].cleanTxt)
-        stopwords = set(STOPWORDS)
-        text_new_positive = prepCloud(text_positive,TwitterHandle)
-        #text_positive=" ".join([word for word in text_positive.split() if word not in stopwords])
-        wordcloud = WordCloud(stopwords=stopwords,max_words=800,max_font_size=70).generate(text_new_positive)
-        st.write(plt.imshow(wordcloud, interpolation='bilinear'))
-        st.pyplot()
+if st.button("Get WordCloud for all Positive Tweets by {}".format(TwitterHandle)):
+    st.success("Generating A WordCloud for all Positive Tweets by {}".format(TwitterHandle))
+    text_positive = " ".join(review for review in df[df["Analysis"]=="Positive"].cleanTxt)
+    stopwords = set(STOPWORDS)
+    text_new_positive = prepCloud(text_positive,TwitterHandle)
+    #text_positive=" ".join([word for word in text_positive.split() if word not in stopwords])
+    wordcloud = WordCloud(stopwords=stopwords,max_words=800,max_font_size=70).generate(text_new_positive)
+    st.write(plt.imshow(wordcloud, interpolation='bilinear'))
+    st.pyplot()
         
                 #Wordcloud for Negative tweets only       
-    if st.button("Get WordCloud for all Negative Tweets by {}".format(TwitterHandle)):
-        st.success("Generating A WordCloud for all Positive Tweets by {}".format(TwitterHandle))
-        text_negative = " ".join(review for review in df[df["Analysis"]=="Negative"].cleanTxt)
-        stopwords = set(STOPWORDS)
-        text_new_negative = prepCloud(text_negative,TwitterHandle)
-        #text_negative=" ".join([word for word in text_negative.split() if word not in stopwords])
-        wordcloud = WordCloud(stopwords=stopwords,max_words=800,max_font_size=70).generate(text_new_negative)
-        st.write(plt.imshow(wordcloud, interpolation='bilinear'))
-        st.pyplot()     
+if st.button("Get WordCloud for all Negative Tweets by {}".format(TwitterHandle)):
+    st.success("Generating A WordCloud for all Positive Tweets by {}".format(TwitterHandle))
+    text_negative = " ".join(review for review in df[df["Analysis"]=="Negative"].cleanTxt)
+    stopwords = set(STOPWORDS)
+    text_new_negative = prepCloud(text_negative,TwitterHandle)
+    #text_negative=" ".join([word for word in text_negative.split() if word not in stopwords])
+    wordcloud = WordCloud(stopwords=stopwords,max_words=800,max_font_size=70).generate(text_new_negative)
+    st.write(plt.imshow(wordcloud, interpolation='bilinear'))
+    st.pyplot()     
 			
               
 st.sidebar.header("About App")
