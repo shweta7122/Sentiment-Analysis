@@ -99,7 +99,7 @@ def main():
         analysis = TectBlob(tweet)
         if analysis.sentiment.polarity > 0:
             return 'Positive'
-        elif analysis.sentiment.polarity ==0
+        elif analysis.sentiment.polarity == 0:
             return'Neutral'
         else:
             return'Negative'
