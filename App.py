@@ -89,8 +89,8 @@ def getPolarity(text):
     return TextBlob(text).sentiment.polarity
 
     # Create two new columns
-df['Subjectivity'].astype(int) = df['Tweets'].apply(getSubjectivity)
-df['Polarity'].astype(int) = df['Tweets'].apply(getPolarity)
+df['Subjectivity'] = df['Tweets'].apply(getSubjectivity)
+df['Polarity'] = df['Tweets'].apply(getPolarity)
     
     
 def getAnalysis(cleanTxt):
