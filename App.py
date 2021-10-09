@@ -62,14 +62,14 @@ def main():
     posts = api.user_timeline(screen_name = TwitterHandle, count = 100, lang ='en', tweet_mode="extended")
     df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
     def get_tweets():
-       l=[]
-       i=1
-       for tweet in posts[:5]:
-          l.append(tweet.full_text)
-	  i= i+1
-	return l
-	recent_tweets=get_tweets()		
-	return recent_tweets
+        l=[]
+        i=1
+        for tweet in posts[:5]:
+        l.append(tweet.full_text)
+        i= i+1
+        return l
+        recent_tweets=get_tweets()		
+        return recent_tweets
 	
 	recent_tweets= Show_Recent_Tweets(raw_text)
 	st.write(recent_tweets)
