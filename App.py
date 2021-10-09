@@ -99,13 +99,12 @@ def main():
     def getAnalysis(score):
 	
         score = convert(score, int)
-	        
-            if score > 0:
-                return 'Positive'
-            elif score == 0:
-                return 'Neutral'
-            else:
-                return 'Negative'
+        if score > 0:
+            return 'Positive'
+        elif score == 0:
+            return 'Neutral'
+        else:
+            return 'Negative'
 
     df['Analysis'] = df['Polarity'].apply(getAnalysis)
 
@@ -216,4 +215,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
