@@ -1,4 +1,4 @@
-
+\
 import streamlit as st
 import warnings
 warnings.filterwarnings("ignore")
@@ -96,13 +96,13 @@ def main():
     df['Polarity'] = df['Tweets'].apply(getPolarity)
     
     def getAnalysis(tweet):
-	analysis = TectBlob(tweet)
+        analysis = TectBlob(tweet)
         if analysis.sentiment.polarity > 0:
-		return 'Positive'
-	elif analysis.sentiment.polarity ==0
-		return'Neutral'
-	else:
-		return'Negative'
+            return 'Positive'
+        elif analysis.sentiment.polarity ==0
+            return'Neutral'
+        else:
+            return'Negative'
 
     df['Analysis'] = df['Polarity'].apply(getAnalysis)
 
