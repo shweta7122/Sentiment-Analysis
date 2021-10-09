@@ -46,46 +46,46 @@ accessTokenSecret = "9xBgvVedGyrtUsofSvVLqM9i499AfSoapl0XtBzaVamrL"
 
     # Use the above credentials to authenticate the API.
     # Creating the authentication data
-    authenticate = tweepy.OAuthHandler(consumerKey, consumerSecret)
+authenticate = tweepy.OAuthHandler(consumerKey, consumerSecret)
 
     # Set the access token and access token secret
-    authenticate.set_access_token(accessToken, accessTokenSecret)
+authenticate.set_access_token(accessToken, accessTokenSecret)
 
     # Create the API object
-    api = tweepy.API(authenticate, wait_on_rate_limit=True)
+api = tweepy.API(authenticate, wait_on_rate_limit=True)
     
-    TwitterHandle = "JustinTrudeau"
-    posts = api.user_timeline(screen_name = TwitterHandle, count = 100, lang ='en', tweet_mode="extended")
-    df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
-    def get_tweets():
-        l=[]
-        i=1
-        for tweet in posts[:5]:
-            l.append(tweet.full_text)
-            i= i+1
-        return l
-        recent_tweets=get_tweets()		
-        return recent_tweets
+TwitterHandle = "JustinTrudeau"
+posts = api.user_timeline(screen_name = TwitterHandle, count = 100, lang ='en', tweet_mode="extended")
+df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
+def get_tweets():
+    l=[]
+    i=1
+      for tweet in posts[:5]:
+          l.append(tweet.full_text)
+          i= i+1
+      return l
+      recent_tweets=get_tweets()		
+      return recent_tweets
 	
     
 
-    def cleanTxt(text):
-        text = re.sub(r'@[A-Za-z0-9]+', '', text) #Removed @mentions
-        text = re.sub(r'#', '', text) #Removed Hastags
-        text = re.sub(r'RT[\s]+', '', text) #Removed RT
-        text = re.sub(r'https?:\/\/\S+', '', text) # Removed hyperlinks
+def cleanTxt(text):
+    text = re.sub(r'@[A-Za-z0-9]+', '', text) #Removed @mentions
+    text = re.sub(r'#', '', text) #Removed Hastags
+    text = re.sub(r'RT[\s]+', '', text) #Removed RT
+    text = re.sub(r'https?:\/\/\S+', '', text) # Removed hyperlinks
 
-        return text
+    return text
         
     df['Tweets']=df['Tweets'].apply(cleanTxt)
 
     # Create a function to get the functionality
-    def getSubjectivity(text):
-    	return TextBlob(text).sentiment.subjectivity
+def getSubjectivity(text):
+    return TextBlob(text).sentiment.subjectivity
 
     # Create a function to get the polarity
-    def getPolarity(text):
-    	return TextBlob(text).sentiment.polarity
+def getPolarity(text):
+    return TextBlob(text).sentiment.polarity
 
     # Create two new columns
     df['Subjectivity'] = df['Tweets'].apply(getSubjectivity)
