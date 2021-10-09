@@ -147,10 +147,9 @@ stopwords = set(STOPWORDS)
 if st.button("Get WordCloud for{}".format(TwitterHandle)):
     st.success("Generating A WordCloud for all tweets by {}".format(TwitterHandle))
     allWords = ' '.join( [twts for twts in df['Tweets']])
-    wordcloud = WordCloud(background_color='white', width=500, height=300, stopwords=stopwords,max_words=50, max_font_size=120, random_state=21).generate(allWords)
-	
-st.write(plt.imshow(wordcloud, interpolation='bilinear'))
-st.pyplot()
+    wordcloud = WordCloud(background_color='white', width=500, height=300, stopwords=stopwords,max_words=50, max_font_size=120, random_state=21).generate(allWords)	
+    st.write(plt.imshow(wordcloud, interpolation='bilinear'))
+    st.pyplot()
         
         
 			
