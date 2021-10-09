@@ -71,7 +71,7 @@ def main():
         recent_tweets=get_tweets()		
         return recent_tweets
 	
-    recent_tweets= Show_Recent_Tweets(raw_text)
+    
     st.write(recent_tweets)
     st.write(recent_tweets)
 	
