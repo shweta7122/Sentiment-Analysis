@@ -35,7 +35,6 @@ img {max-width: 100%;}
     #st.title("Live Twitter Sentiment analysis")
     #st.subheader("Select a User for whom you'd like to get the sentiment analysis:")
 
-    
     st.markdown("Tweet Analysis")
     st.subheader("Select a User")
 
