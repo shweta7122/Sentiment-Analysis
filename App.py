@@ -122,7 +122,7 @@ def main():
         df['CleanTxt'] = df['Tweets'].apply(lambda x : cleanTxt(x))
     
         # Call function to get the Sentiments
-        df["Polarity"] = df["Tweet"].apply(lambda x : getAnalysis(x))
+        df["Polarity"] = df["Tweets"].apply(lambda x : getAnalysis(x))
                 
         # Write Summary of the Tweets
         st.write("Total Tweets Extracted for the User '{}' are : {}".format(TwitterHandle,len(df.Tweets)))
