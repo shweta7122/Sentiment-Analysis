@@ -31,7 +31,7 @@ img {max-width: 100%;}
 </style> """
 
 
-    """ Common ML Dataset Explorer """
+    
     #st.title("Live Twitter Sentiment analysis")
     #st.subheader("Select a User for whom you'd like to get the sentiment analysis:")
 
