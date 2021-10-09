@@ -119,16 +119,16 @@ df['Analysis'] = df['Polarity'].apply(getAnalysis)
            
     
         # Call function to get Clean tweets
-    df['CleanTxt'] = df['Tweets'].apply.getAnalysis(cleanTxt)
+df['CleanTxt'] = df['Tweets'].apply.getAnalysis(cleanTxt)
     
         # Call function to get the Sentiments
-    df["Polarity"] = df["Tweets"].apply.getAnalysis(cleanTxt)
+df["Polarity"] = df["Tweets"].apply.getAnalysis(cleanTxt)
                 
         # Write Summary of the Tweets
-    st.write("Total Tweets Extracted for the User '{}' are : {}".format(TwitterHandle,len(df.Tweets)))
-    st.write("Total Positive Tweets are : {}".format(len(df[df["Analysis"]=="Positive"])))
-    st.write("Total Negative Tweets are : {}".format(len(df[df["Analysis"]=="Negative"])))
-    st.write("Total Neutral Tweets are : {}".format(len(df[df["Analysis"]=="Neutral"])))
+st.write("Total Tweets Extracted for the User '{}' are : {}".format(TwitterHandle,len(df.Tweets)))
+st.write("Total Positive Tweets are : {}".format(len(df[df["Analysis"]=="Positive"])))
+st.write("Total Negative Tweets are : {}".format(len(df[df["Analysis"]=="Negative"])))
+st.write("Total Neutral Tweets are : {}".format(len(df[df["Analysis"]=="Neutral"])))
         
     # See the Extracted Data : 
     if st.button("See the Extracted Data"):
