@@ -92,7 +92,6 @@ df['Polarity'] = df['Tweets'].apply(getPolarity)
     
 def getAnalysis(score):
 	
-    score = convert(score, int)
     if score > 0:
        return 'Positive'
     elif score == 0:
