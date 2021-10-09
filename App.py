@@ -35,9 +35,8 @@ img {max-width: 100%;}
     #st.title("Live Twitter Sentiment analysis")
     #st.subheader("Select a User for whom you'd like to get the sentiment analysis:")
 
-html_temp = <div style="background-color:tomato;"><p style="color:white;font-size:25px;padding:9px">Live Twitter Sentiment Analysis</p></div>
     
-    st.markdown(html_temp, unsafe_allow_html=True)
+    st.markdown("Tweet Analysis")
     st.subheader("Select a User")
 
     ################# Twitter API Connection #######################
