@@ -75,6 +75,20 @@ def main():
 
     df['Tweets']=df['Tweets'].apply(cleanTxt)
 	
+	def get_tweets():
+
+		l=[]
+		i=1
+		for tweet in posts[:5]:
+			l.append(tweet.full_text)
+			i= i+1
+		return l
+
+		recent_tweets=get_tweets()		
+		return recent_tweets
+	
+	recent_tweets= Show_Recent_Tweets(raw_text)
+	st.write(recent_tweets)
 
     # Create a function to get the functionality
     def getSubjectivity(text):
