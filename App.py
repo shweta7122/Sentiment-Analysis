@@ -71,9 +71,9 @@ def main():
         recent_tweets=get_tweets()		
         return recent_tweets
 	
-	recent_tweets= Show_Recent_Tweets(raw_text)
-	st.write(recent_tweets)
-	st.write(recent_tweets)
+    recent_tweets= Show_Recent_Tweets(raw_text)
+    st.write(recent_tweets)
+    st.write(recent_tweets)
 	
     def cleanTxt(text):
 	text = re.sub(r'@[A-Za-z0-9]+', '', text) #Removed @mentions
@@ -214,4 +214,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
