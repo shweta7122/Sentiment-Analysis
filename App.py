@@ -37,11 +37,11 @@ img {max-width: 100%;}
 st.markdown("Tweet Analysis")
 st.subheader("Select a User")
 
-    ################# Twitter API Connection #######################
-    consumerKey = "kDgO0qZRdVkKICung7MkPl2QU"
-    consumerSecret = "ZOQhlwSEMhZUtdVPjc9CG4kaGCEWdR6AT9e2SJiJXoIMHxnIDi"
-    accessToken = "1445776538599768074-Vl3Udixl0J4EwIokYsboiQYbkviqin"
-    accessTokenSecret = "9xBgvVedGyrtUsofSvVLqM9i499AfSoapl0XtBzaVamrL"
+################# Twitter API Connection #######################
+consumerKey = "kDgO0qZRdVkKICung7MkPl2QU"
+consumerSecret = "ZOQhlwSEMhZUtdVPjc9CG4kaGCEWdR6AT9e2SJiJXoIMHxnIDi"
+accessToken = "1445776538599768074-Vl3Udixl0J4EwIokYsboiQYbkviqin"
+accessTokenSecret = "9xBgvVedGyrtUsofSvVLqM9i499AfSoapl0XtBzaVamrL"
 
 
     # Use the above credentials to authenticate the API.
