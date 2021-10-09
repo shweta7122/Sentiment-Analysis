@@ -36,7 +36,7 @@ def main():
     #st.subheader("Select a User for whom you'd like to get the sentiment analysis:")
 
     html_temp = """
-    <div style="background-color:tomato;"><p style="color:white;font-size:40px;padding:9px">Live Twitter Sentiment Analysis</p></div>
+    <div style="background-color:tomato;"><p style="color:white;font-size:25px;padding:9px">Live Twitter Sentiment Analysis</p></div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     st.subheader("Select a User")
@@ -62,19 +62,7 @@ def main():
     posts = api.user_timeline(screen_name = TwitterHandle, count = 100, lang ='en', tweet_mode="extended")
     df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
         
-    
-# Write a Function to clean tweets:
-    def cleanTxt(text):
-        text = re.sub(r'@[A-Za-z0-9]+', '', text) #Removed @mentions
-        text = re.sub(r'#', '', text) #Removed Hastags
-        text = re.sub(r'RT[\s]+', '', text) #Removed RT
-        text = re.sub(r'https?:\/\/\S+', '', text) # Removed hyperlinks
-
-        return text
-
-
     df['Tweets']=df['Tweets'].apply(cleanTxt)
-	
 	def get_tweets():
 		l=[]
 		i=1
@@ -86,6 +74,7 @@ def main():
 		return recent_tweets
 	
 	recent_tweets= Show_Recent_Tweets(raw_text)
+	st.write(recent_tweets)
 	st.write(recent_tweets)
 
     # Create a function to get the functionality
