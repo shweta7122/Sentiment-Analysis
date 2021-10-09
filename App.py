@@ -90,11 +90,11 @@ df['Subjectivity'] = df['Tweets'].apply(getSubjectivity)
 df['Polarity'] = df['Tweets'].apply(getPolarity)
     
     
-def getAnalysis(score):
+def getAnalysis(cleanTxt):
 	
-    if score > "0":
+    if analysis.sentiment.polarity .0:
        return 'Positive'
-    elif score == "0":
+    elif analysis.sentiment.polarity == "0":
        return 'Neutral'
     else:
        return 'Negative'
