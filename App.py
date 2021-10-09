@@ -95,12 +95,10 @@ def main():
     df['Subjectivity'] = df['Tweets'].apply(getSubjectivity)
     df['Polarity'] = df['Tweets'].apply(getPolarity)
     
-    def convert(x, cast):
-        score =cast(x)
-        return x
-	
     
     def getAnalysis(score):
+	
+	score = convert(score, int)
 	        
         if score > 0:
             return 'Positive'
