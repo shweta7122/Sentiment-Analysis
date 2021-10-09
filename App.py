@@ -30,7 +30,7 @@ STYLE = """
 img {max-width: 100%;}
 </style> """
 
-def main():
+
     """ Common ML Dataset Explorer """
     #st.title("Live Twitter Sentiment analysis")
     #st.subheader("Select a User for whom you'd like to get the sentiment analysis:")
@@ -210,10 +210,5 @@ def main():
 
     if st.button("Exit"):
         st.balloons()
-
-
-
-if __name__ == '__main__':
-    main()
 
 
