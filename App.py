@@ -61,8 +61,7 @@ def main():
     TwitterHandle = "JustinTrudeau"
     posts = api.user_timeline(screen_name = TwitterHandle, count = 100, lang ='en', tweet_mode="extended")
     df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
-        
-    df['Tweets']=df['Tweets'].apply(cleanTxt)
+	
 	def get_tweets():
 		l=[]
 		i=1
@@ -76,6 +75,16 @@ def main():
 	recent_tweets= Show_Recent_Tweets(raw_text)
 	st.write(recent_tweets)
 	st.write(recent_tweets)
+	
+	def cleanTxt(text):
+		text = re.sub(r'@[A-Za-z0-9]+', '', text) #Removed @mentions
+		text = re.sub(r'#', '', text) #Removed Hastags
+  		text = re.sub(r'RT[\s]+', '', text) #Removed RT
+  		text = re.sub(r'https?:\/\/\S+', '', text) # Removed hyperlinks
+
+  	return text
+        
+    df['Tweets']=df['Tweets'].apply(cleanTxt)
 
     # Create a function to get the functionality
     def getSubjectivity(text):
@@ -99,7 +108,6 @@ def main():
 
     df['Analysis'] = df['Polarity'].apply(getAnalysis)
 
-    
  
     
     # Collect Input from user :
