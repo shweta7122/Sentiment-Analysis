@@ -144,7 +144,7 @@ def prepCloud(text,TwitterHandle):
     stopwords = set(STOPWORDS)
     stopwords.update(cleanTxt) ### Add our topic in Stopwords, so it doesnt appear in wordClous
     text_new = " ".join([txt for txt in Topic_text.split() if txt not in stopwords])
-        return text_new
+    return text_new
         
         # Create a Worlcloud
 if st.button("Get WordCloud for{}".format(TwitterHandle)):
