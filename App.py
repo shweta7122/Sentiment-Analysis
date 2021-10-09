@@ -68,16 +68,6 @@ st.success('Tweets have been Extracted !!!!')
 #df.to_csv("TweetDataset.csv",index=False)
 #df.to_excel('{}.xlsx'.format("TweetDataset"),index=False)   ## Save as Excel
 
-def get_tweets():
-    i=0
-    i=i+1
-    for tweet in posts[:5]:
-        i= i+1
-        return i
-    recent_tweets=get_tweets()		
-    return recent_tweets
-	
-    
 
 def cleanTxt(text):
     text = re.sub(r'@[A-Za-z0-9]+', '', text) #Removed @mentions
