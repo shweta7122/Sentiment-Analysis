@@ -74,7 +74,6 @@ def main():
 
 
     df['Tweets']=df['Tweets'].apply(cleanTxt)
-	
 	def get_tweets():
 
 		l=[]
@@ -83,7 +82,6 @@ def main():
 			l.append(tweet.full_text)
 			i= i+1
 		return l
-
 		recent_tweets=get_tweets()		
 		return recent_tweets
 	
