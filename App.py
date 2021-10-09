@@ -98,7 +98,7 @@ def main():
     
     def getAnalysis(score):
 	
-        score = convert(score, int)
+        score = int(score)
         if score > 0:
             return 'Positive'
         elif score == 0:
